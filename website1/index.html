@@ -5,236 +5,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="H6u0PLCI31MHzA2TktlAQUQSY1TjmEWz7FfYupfE">
+    <title>SurveyJS Offline</title>
 
-    <title>TESTING ONLY</title>
-
-    <!-- Styles -->
-    <!--<link href="https://testing.agland.ca/css/app.css" rel="stylesheet">-->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Raleway:300,400,600">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css"
-          integrity="sha256-9w7XtQnqRDvThmsQHfLmXdDbGasYsSjF6FSXrDh7F6g=" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css"
-      integrity="sha256-xqxV4FDj5tslOz6MV13pdnXgf63lJwViadn//ciKmIs="
-      crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
-      integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
-      crossorigin=""/>
-
-    <link href="/css/leaflet-vector-markers.css" rel="stylesheet">
-    <link href="/css/MarkerCluster.css" rel="stylesheet">
-    <link href="/css/MarkerCluster.Default.css" rel="stylesheet">
-    <link href="/css/Control.Coordinates.css" rel="stylesheet">
-    <link href="/css/servicevelocity.css" rel="stylesheet">
-    <link href="/css/Control.FullScreen.css" rel="stylesheet">
-    <link href="/css/Control.Geocoder.css" rel="stylesheet">
-
-    <link href="/jqwidgets/styles/jqx.base.css" type="text/css" rel="stylesheet" />
-
-    <link href="/css/Leaflet.StyledLayerControl/css/styledLayerControl.css" type="text/css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
-
-    <link href="/css/selectize.default.css" type="text/css" rel="stylesheet" />
-    <link href="/css/selectize.bootstrap3.css" type="text/css" rel="stylesheet" />
-
-    <link href="/css/leaflet-beautify-marker-icon.css" type="text/css" rel="stylesheet" />
-    <link href="/css/formValidation/1.5.0/formValidation.min.css" type="text/css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" type="text/css" rel="stylesheet" />
-    <link href="/css/select2-bootstrap4.css" type="text/css" rel="stylesheet"/>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.css"/>
-
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-zhaLg9HKxTxDljOPXpWHGn91XMDH+sYAWRSgvzHes290/ISyrNicGrd6BInTnx3L" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/v4-shims.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.print.css" media="print">
+    <script src="https://kit.fontawesome.com/29eb626f63.js"></script>
 
     <style>
 
-/* Start Yield css */
-      
-/* End Yield css */
+        /* Start Yield css */
+
+        i#loading-icon {
+            color: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 200px;
+            margin-top: -100px;
+            margin-left: -100px;
+        }
+
+        /* End Yield css */
 
     </style>
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {"csrfToken":"H6u0PLCI31MHzA2TktlAQUQSY1TjmEWz7FfYupfE"};
-    </script>
 </head>
 <body>
-    <div id="app">
-        <!--Start layouts.nav-->
-        <nav class="navbar navbar-expand-md navbar-static-top navbar-default">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div id="onlineIndicator"></div>
-    <a class="navbar-brand" href="/">&nbsp&nbspTESTING ONLY</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" >
-          <a class="nav-link" href="/requisition"><i class="fab fa-wpforms"></i> Requisition</a>
-        </li>
-        <li class="nav-item" ><a class="nav-link" href="/maps"><i class="fa fa-map" aria-hidden="true"></i> Map</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownServiceManagement" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-abacus"></i> Service Mgmt
-          </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownServiceManagement">
-              <a class="dropdown-item" class="nav-link" href="/toolloan"><i class="fas fa-toolbox"></i> Tools Loaned</a>
-              <a class="dropdown-item"class="nav-link" href="https://sales.agland.ca">Sales Tracker</a>
-            </div>
-        </li>
-                <li class="nav-item" ><a class="nav-link" href="/finance/forms"><i class="fas fa-file-invoice-dollar"></i> Finance Docs</a></li>
-                          <li class="nav-item" ><a class="nav-link" href="/finance/invoice"><i class="fas fa-file-invoice"></i> Wholegoods Invoices</a></li>
-                <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOther" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-cubes"></i> Other
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownOther">
-            <a class="dropdown-item" href="/intellidealer">IntelliDealer Wireless</a>
-            <a class="dropdown-item" href="/trucking">Trucking</a>
-                        <div class="dropdown-divider"></div>
-            <div class="dropdown-divider">Equipment Reports</div>
-            <a class="dropdown-item" href="/service/report/equipment">Equipment Reports</a>
-                                    <div class="dropdown-divider"></div>
-            <div class="dropdown-divider">Technician Reviews</div>
-            <a class="dropdown-item" href="/review">Tech Reviews</a>
-                        <div class="dropdown-divider"></div>
-            <div class="dropdown-divider">IntelliDealer</div>
-	          <!--<a class="dropdown-item" href='http://pfwf5027.adp-id.net:20200/invcount5027/pfw'>IntelliDealer Mobile</a>-->
-	          <a class="dropdown-item" href='http://pfwf5027.adp-id.net:20207/pfwf5027'>IntelliDealer</a>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-divider">Label Printer</div>
-            <a class="dropdown-item" href='/label'><i class="fas fa-tags"></i> Print Labels</a>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-divider">Account Changes</div>
-            <a class="dropdown-item" href="/account_changes">Submit</a>
-            <a class="dropdown-item" href="/account_changes/lookup">View Completed</a>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-divider">Misc</div>
-            <a class="dropdown-item" href="/email_management">Email Consent Manager</a>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-divider">TESTING ONLY V0.2.0</div>
-          </div>
-        </li>
-        
-                <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDevelopment" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Development
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownDevelopment">
-              <a class="dropdown-item" href="/service/calls/scheduler">Service Calls Scheduler</a>
-              <a class="dropdown-item" href="/forms?type=precision_ag_sales">Precision Ag Sale</a>
-              <a class="dropdown-item" href="/forms?type=inspection_designer">Inspection Designer</a>
-              <a class="dropdown-item" href="/forms?type=inspections">Inspections</a>
-            </div>
-        </li>
-              </ul>
-       
-      <ul class="navbar-nav mr-auto navbar-right">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSettings" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-cogs"></i> Settings
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownSettings">
-              <a class="dropdown-item" href='/admin'><i class="fas fa-cogs"></i> Settings</a>
-              <a class="dropdown-item" href='/admin/map/trucking'><i class="fas fa-truck"></i> Trucking</a>
-              <a class="dropdown-item" href='/admin/map/boundaries'>Boundaries</a>
-              <a class="dropdown-item" href='/admin/requisition/job_codes'>Job Codes and Classes</a>
-              <a class="dropdown-item" href="/admin/trucking_providers">Trucking Provider</a>
-              <a class="dropdown-item" href="/admin/form_types">Form Types</a>
-          </div>
-          <li class="nav-item" >
-            <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i> Darren Wiebe</a>
-          </li>
-        </ul>
-      </div>
+<div id="app">
+    <!--Start layouts.nav-->
+    <nav class="navbar navbar-expand-md navbar-static-top navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div id="onlineIndicator"></div>
+        <a class="navbar-brand" href="/">SurveyJS Offline</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </nav>
-        <!--End layouts.nav-->
-        <div class="container-fluid d-flex flex-column grow">
-                        <!--Start Yield content-->
-                <div class="row">
-        <div class="col-md-12">
-            <h2 class="text-center">SurveyJS Inspections</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="open_form"><i class="far fa-edit"></i>  New Inspection</label>
-                <select name="open_form" class="select2" id="open_form" style="width:100%">
-                    <option value="">Select Inspection...</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="activeInspections"><i class="far fa-edit"></i>  Complete Inspection</label>
-                <select name="activeInspections" class="select2" id="activeInspections" style="width:100%">
-                    <option value="">Select Inspection...</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-md-2">
-            Cached Inspections: <span id="cachedInspections"></span>
-        </div>
-    </div>
-    <div id="divRowInspection">
-        <div class="row">
-            <div class="col-md-3">
-                <button class="btn btn-primary" id="buttonSaveState">Save</button>
-                <button class="btn btn-danger" id="buttonDelete">Delete</button>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="inputInspectionDescription">Inspection Description</label>
-                    <input type="text" class="form-control" id="inputInspectionDescription" placeholder="Description Text">
-                </div>
-            </div>
-            <div class="col-md-3">
-                Last Save: <span id="lastSaveTime"></span>
-            </div>
-        </div>
+    <!--End layouts.nav-->
+    <div class="container-fluid d-flex flex-column grow">
+        <!--Start Yield content-->
         <div class="row">
             <div class="col-md-12">
-                <div id="surveyElement"></div>
+                <h2 class="text-center">Inspections / Forms</h2>
             </div>
         </div>
-    </div>
-
-            <!--End Yield content-->
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <div class="form-group">
+                    <label class="h5 d-inline" for="open_form"><i class="far fa-edit"></i>  New Inspection</label>
+                    <select name="open_form" class="form-control" id="open_form">
+                        <option value="">Select Inspection...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="form-group">
+                    <label class="h5 d-inline" for="activeInspections"><i class="far fa-edit"></i>  In Progress Inspection</label>
+                    <select name="activeInspections" class="form-control" id="activeInspections">
+                        <option value="">Select Inspection...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        In Progress Inspections:
+                        <span id="cachedInspections" class="badge badge-primary badge-pill">0</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" id="liCachedImages">
+                        Cached Images:
+                        <span  id="cachedImages" class="badge badge-primary badge-pill">0</span>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <div id="divRowInspection">
+            <div class="row align-items-center">
+                <div class="col-sm-4 col-md-2">
+                    <button class="btn btn-primary btn-block" id="buttonSaveState">Save</button>
+                </div>
+                <div class="col-sm-4 col-md-2">
+                    <button class="btn btn-danger btn-block" id="buttonDelete">Delete</button>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="form-group">
+                        <label class="h5 d-inline" for="inputInspectionDescription">Description</label>
+                        <input type="text" class="form-control" id="inputInspectionDescription" placeholder="Description Text">
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <span class="badge badge-primary" id="lastSaveTime"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="surveyElement"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--End Yield content-->
     </div>
-    <!--Start layouts.footer-->
-    <footer class="container-fluid text-center bg-lightgray">
-  <div style="margin-top:25px;">
+</div>
+<!--Start layouts.footer-->
+<footer class="container-fluid text-center bg-lightgray">
+    <div style="margin-top:25px;">
 
-  </div>
+    </div>
 </footer>
-    <!--End layouts.footer-->
-    <!-- Scripts -->
 
-   <!-- <script src="https://cdn.ravenjs.com/3.19.1/raven.min.js" crossorigin="anonymous"></script>
-    <script>
-        Raven.config('https://2ab0a0dc301d4b0eab893fad21a149dd@sentry.cloudveil.org/9').install();
-    </script>-->
-
-    <script>
+<script>
 
     let serviceWorker = false;
     let networkCondition = null;
@@ -250,6 +133,7 @@
 
     if ('serviceWorker' in navigator) {
         serviceWorker = true;
+
         window.addEventListener('load', function() {
             setOnlineIndicator(navigator.onLine);
             navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(function(registration) {
@@ -263,13 +147,10 @@
             function updateOnlineStatus(event) {
                 networkCondition = navigator.onLine ? "Live" : "Currently offline";
                 setOnlineIndicator(navigator.onLine);
-                //console.log(event);
-                //console.log(navigator.onLine);
             }
 
             window.addEventListener('online',  updateOnlineStatus);
             window.addEventListener('offline', updateOnlineStatus);
-
         });
 
         navigator.serviceWorker.addEventListener('controllerchange', function(event) {
@@ -286,8 +167,8 @@
 
                     if (this.state === 'activated') {
                         console.log('We are now offline friendly');
-                       // document.getElementById('offlineNotification')
-                       //     .classList.remove('hidden');
+                        // document.getElementById('offlineNotification')
+                        //     .classList.remove('hidden');
                     }
                 }
             );
@@ -296,505 +177,705 @@
     }
 
 </script>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
-    <!--<script src="https://testing.agland.ca/js/app.js"></script>-->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.1/jquery.form.js"
-      integrity="sha256-nu/GkQ+XhY435J7iJpWPhhGMjTWKyUJ8+QUPS8nbHvU="
-      crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.js"></script>
+<script src="https://unpkg.com/axios@0.19.0/dist/axios.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"
-            integrity="sha256-ncetQ5WcFxZU3YIwggfwOwmewLVX4SHLBtDYnrsxooY=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.3/es6-shim.min.js"></script>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js" integrity="sha256-LlN0a0J3hMkDLO1mhcMwy+GIMbIRV7kvKHx4oCxNoxI=" crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
-      integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
-      crossorigin=""></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 
-    <script src="/js/leaflet-vector-markers.min.js"></script>
-    <script src="/js/leaflet.markercluster.js"></script>
-    <script src="/js/leaflet.ajax.js"></script>
-    <script src="/js/Control.Coordinates.js"></script>
-    <script src="/js/Control.FullScreen.js"></script>
-    <script src="/js/Control.Geocoder.js"></script>
+<script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
 
-    <script src="/js/Leaflet.StyledLayerControl/src/styledLayerControl.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
 
-    <script src="/js/cookie.js"></script>
-    <script src="/js/selectize.js"></script>
-    <script src="/js/leaflet-beautify-marker-icon.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.3.2/bootbox.min.js" integrity="sha256-s87nschhfp/x1/4+QUtIa99el2ot5IMQLrumROuHZbc=" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.3/es6-shim.min.js"></script>
-    <script src="/js/formvalidation/1.5.0/FormValidation.min.js"></script>
-    <script src="/js/formValidation/1.5.0/plugins/Bootstrap.min.js"></script>
+<!-- Start surveyjs.io -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+<!--<script src="https://surveyjs.azureedge.net/1.1.8/survey.ko.js"></script>-->
+<script src="https://surveyjs.azureedge.net/1.1.10/survey.jquery.min.js"></script>
+<!--<link href="https://surveyjs.azureedge.net/1.1.10/survey.css" type="text/css" rel="stylesheet"/>-->
 
-    <script src="/js/jquery.serialize-object.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/worker-json.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-json.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js" type="text/javascript"></script>
 
-    <script src="/js/bootstrap-notify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.3/localforage.min.js" type="text/javascript"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.css"/>
+<!-- Uncomment to enable Select2 <script src="https://unpkg.com/jquery"></script> <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" /> <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script> -->
+<!-- End surveyjs.io -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.3/localforage.min.js" type="text/javascript"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uuid-random@1.0.9/uuid-random.min.js"></script>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    let surveyId = null;
+    let inspectionId = null;
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+    let store = localforage.createInstance({
+        name: "SurveyJSOffline"
+    });
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+    let inspectionForms = [];
 
-    <script src="/assets/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    let activeInspectionArrayId = null;
+    let activeInspectionUuid = null;
+    let activeInspections = [];
 
-    <script src="/js/service-velocity.js"></script>
+    let cachedImages = [];
 
-    <script>
-        //window.axios.defaults.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        window.axios.defaults.headers.common = { 
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        };
+    let cachedInspectionsCount = 0;
+    let cachedImagesCount = 0;
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }   
+    var timerId = 0;
+
+    let survey;
+
+    let user = [];
+
+    let responses = [];
+
+    window.$(document).ready(function() {
+        console.log('Document Ready');
+
+        /*$.notifyDefaults({
+            type: 'success',
+            z_index: 5000,
+        });*/
+
+        updateAvailableInspectionForms();
+
+        updateActiveInspections();
+
+        $("#buttonSaveState").on('click', function() {
+            addSpinner();
+            saveState(survey);
+            removeSpinner();
         });
 
-
-    </script>
-    <!--Start Yield javascript-->
-        <!-- Start surveyjs.io -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-    <script src="https://surveyjs.azureedge.net/1.1.8/survey.ko.js"></script>
-    <script src="https://surveyjs.azureedge.net/1.1.8/survey.jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/worker-json.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-json.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js" type="text/javascript"></script>
-
-    <!-- Uncomment to enable Select2 <script src="https://unpkg.com/jquery"></script> <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" /> <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script> -->
-    <!-- End surveyjs.io -->
-
-    <script src="/js/localforage.js"></script>
-
-    <script>
-
-        let surveyId = null;
-        let inspectionId = null;
-
-        let store = localforage.createInstance({
-            name: "ServiceVelocityV2"
+        $("#buttonDelete").on('click', function() {
+            addSpinner();
+            $('<i class="fa fa-spin fa-8x fa-cog" id="loading-icon"></i>').appendTo('body');
+            deleteSurvey(activeInspectionArrayId);
+            removeSpinner();
         });
 
-        let inspectionForms = [];
+        $("#open_form").on('change', function () {
+            activeInspectionArrayId = null;
+            activeInspectionUuid = uuid();
+            surveyId = $("#open_form").val();
+            console.log('opening Form: ' + surveyId);
+            $("#inputInspectionDescription").val(inspectionForms[surveyId].description);
+            selectSurvey();
+        });
 
-        let activeInspectionArrayId = null;
-        let activeInspections = [];
+        $("#activeInspections").on('change', function () {
+            addSpinner();
+            activeInspectionArrayId = $("#activeInspections").val();
+            console.log('opening Partial Inspection: ' + activeInspectionArrayId);
+            console.log(activeInspections[activeInspectionArrayId]);
+            activeInspectionUuid = activeInspections[activeInspectionArrayId].uuid;
+            $("#inputInspectionDescription").val(activeInspections[activeInspectionArrayId].description);
+            selectSurvey();
+            removeSpinner();
+        });
 
-        var storageName = "SurveyJS_LoadState";
-        var timerId = 0;
+        $("#liCachedImages").on('click', function() {
+            processImages();
+        });
 
-        let surveyCreator;
+    });
 
-        let survey;
+    function submitInspection(activeInspectionArrayId){
+        let completedInspection = activeInspections[activeInspectionArrayId];
+        console.log(completedInspection);
 
-        let user = [];
-
-        let tableListForms = null;
-
-        let branches = [];
-                    branches[1] = "Lloydminster";
-                    branches[2] = "Vermilion";
-                    branches[3] = "St Paul";
-        
-        let responses = [];
-
-
-        // Add a 401 response interceptor
-        window.axios.interceptors.response.use(function (response) {
-            return response;
-        }, function (error) {
-            if (401 === error.response.status) {
-                swal({
-                    title: "Session Expired",
-                    text: "Your session has expired. Would you like to be redirected to the login page?",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                    buttons: ["Stay Here!", "Return to Login Screen!"],
-                })
-                    .then((redirect) => {
-                        if (redirect) {
-                            window.location = 'https://testing.agland.ca/forms';
-                        }
-                    });
-            } else {
-                return Promise.reject(error);
+        axios({
+            method: 'post',
+            url: '/api/v1/inspection',
+            headers: {'content-type': 'application/json'},
+            data: {
+                inspectionFormData: completedInspection.surveyModel,
+                inspectionFormId: completedInspection.inspection_form_id,
+                inspectionData: completedInspection.survey,
+                uuid: completedInspection.uuid,
+                description: completedInspection.description,
             }
+        })
+            .then(function (response) {
+                console.log(response);
+                data = response.data;
+                $.notify({
+                    // options
+                    message: 'Successfully Saved Inspection!',
+                }, {
+                    // settings
+                    type: 'success'
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+                console.log(error.response);
+                $.notify({
+                    // options
+                    message: 'Failed to Save Inspection!'
+                }, {
+                    // settings
+                    type: 'danger'
+                });
+            });
+    }
+
+    function addSpinner() {
+        //'console.log('add spinner');
+    }
+
+    function removeSpinner() {
+        //console.log('remove spinner');
+        $("#loading-icon").remove();
+    }
+
+    /*function saveInspectionForm() {
+        axios({
+            method: 'post',
+            url: '/api/v1/inspection',
+            headers: {'content-type': 'application/json'},
+            data: {
+                description: $("#inputNewFormDescription").val()
+            }
+        })
+            .then(function (response) {
+                console.log(response);
+                data = response.data;
+                $.notify({
+                    // options
+                    message: 'Successfully Added Inspection Form!',
+                }, {
+                    // settings
+                    type: 'success'
+                });
+                $('#modalNewForm').modal('hide');
+                populateListGroupSurveyManage();
+            })
+            .catch(function (error) {
+                console.log(error);
+                console.log(error.response);
+                /*$.notify({
+                    // options
+                    message: 'Failed to Save Change!'
+                }, {
+                    // settings
+                    type: 'danger'
+                });*/
+    /*        });
+    }*/
+
+    function updateAvailableInspectionForms() {
+        axios({
+            method: 'get',
+            url: '/api/v1/inspection_form.json',
+            headers: {'content-type': 'application/json'},
+            data: {
+                //accounting_status: $("#selectAccountingStatus").val()
+            }
+        })
+            .then(function (response) {
+                console.log(response);
+                data = response.data;
+                $.notify({
+                    // options
+                    message: 'Successfully Downloaded Available Inspection Forms!'
+                }, {
+                    // settings
+                    type: 'success'
+                });
+                let inspection_forms = data;
+                store.setItem('inspection_forms', data).then(function (value) {
+                    console.log('saved inspection forms');
+                    populateInspectionFormLists();
+                }).catch(function (err) {
+                    alert('Failed to save inspection forms.');
+                    // we got an error
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+                console.log(error.response);
+                $.notify({
+                    // options
+                    message: 'Failed to Download Inspection Forms!'
+                }, {
+                    // settings
+                    type: 'danger'
+                });
+                populateInspectionFormLists();
+            });
+
+    }
+
+    function getImage(sender,options) {
+        console.log('getImage');
+        console.log(sender);
+        console.log(options);
+    }
+
+    function storeImage(sender,options, image_uuid) {
+        console.log('storeImage');
+        console.log(sender);
+        console.log(options);
+
+        let data = {};
+        data.uuid = image_uuid;
+        //data.image = reader.result;
+        data.files = options.files;
+        data.inspection_uuid = activeInspections[activeInspectionArrayId].uuid;
+
+        store.setItem('file_' + image_uuid, data).then(function (image) {
+            // This will be a valid blob URI for an <img> tag.
+            // TODO: Do something useful with this.
+            //var blob = new Blob([data.image]);
+            //var imageURI = window.URL.createObjectURL(blob);
+            //console.log(imageURI);
+            console.log(image);
+            processImages();
+        }).catch(function (err) {
+            // This code runs if there were any errors
+            console.log(err);
         });
 
+        /*var reader = new FileReader();
+        reader.onload = function(e) {
+            // Create a new image.
+            var img = new Image();
 
+            img.src = reader.result;
+            let data = {};
+            data.uuid = image_uuid;
+            //data.image = reader.result;
+            data.files = options.files;
 
-        window.$(document).ready(function() {
-            console.log('Document Ready');
+            store.setItem('file_' + image_uuid, data).then(function (image) {
+                // This will be a valid blob URI for an <img> tag.
+                // TODO: Do something useful with this.
+                var blob = new Blob([data.image]);
+                var imageURI = window.URL.createObjectURL(blob);
+                console.log(imageURI);
 
-            $.fn.select2.defaults.set("theme", "bootstrap");
-            $.notifyDefaults({
-                type: 'success',
-                z_index: 5000,
-            });
-
-            updateAvailableInspectionForms();
-
-            updateActiveInspections();
-
-            $("#buttonSaveState").on('click', function() {
-               saveState(survey);
-            });
-
-            $("#buttonDelete").on('click', function() {
-                deleteSurvey(activeInspectionArrayId);
-            });
-
-            $("#open_form").on('change', function () {
-                activeInspectionArrayId = null;
-                surveyId = $("#open_form").val();
-                console.log('opening Form: ' + surveyId);
-                $("#inputInspectionDescription").val(inspectionForms[surveyId].description);
-                selectSurvey();
-            });
-
-            $("#activeInspections").on('change', function () {
-                activeInspectionArrayId = $("#activeInspections").val();
-                console.log('opening Partial Inspection: ' + activeInspectionArrayId);
-                console.log(activeInspections[activeInspectionArrayId]);
-                $("#inputInspectionDescription").val(activeInspections[activeInspectionArrayId].description);
-                selectSurvey();
-            });
-
-        });
-
-        /*function saveMySurvey(){
-            var yourNewSurveyJSON = surveyCreator.text;
-            console.log(yourNewSurveyJSON);
-            //send updated json in your storage
-
-            axios({
-                method: 'patch',
-                url: '/api/v1/inspection_form/' + surveyId,
-                headers: {'content-type': 'application/json'},
-                data: {
-                    data: yourNewSurveyJSON
-                }
-            })
-                .then(function (response) {
-                    console.log(response);
-                    data = response.data;
-                    $.notify({
-                        // options
-                        message: 'Successfully Saved Inspection Form!',
-                    }, {
-                        // settings
-                        type: 'success'
-                    });
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    console.log(error.response);
-                    $.notify({
-                        // options
-                        message: 'Failed to Save Inspection Form!'
-                    }, {
-                        // settings
-                        type: 'danger'
-                    });
-                });
-        }*/
-
-        function saveNewForm() {
-            axios({
-                method: 'post',
-                url: '/api/v1/inspection_form',
-                headers: {'content-type': 'application/json'},
-                data: {
-                    description: $("#inputNewFormDescription").val()
-                }
-            })
-                .then(function (response) {
-                    console.log(response);
-                    data = response.data;
-                    $.notify({
-                        // options
-                        message: 'Successfully Added Inspection Form!',
-                    }, {
-                        // settings
-                        type: 'success'
-                    });
-                    $('#modalNewForm').modal('hide');
-                    populateListGroupSurveyManage();
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    console.log(error.response);
-                    /*$.notify({
-                        // options
-                        message: 'Failed to Save Change!'
-                    }, {
-                        // settings
-                        type: 'danger'
-                    });*/
-                });
-        }
-
-        function updateAvailableInspectionForms() {
-            axios({
-                method: 'get',
-                url: '/api/v1/inspection_form',
-                headers: {'content-type': 'application/json'},
-                data: {
-                    //accounting_status: $("#selectAccountingStatus").val()
-                }
-            })
-                .then(function (response) {
-                    console.log(response);
-                    data = response.data;
-                    /*$.notify({
-                        // options
-                        message: 'Successfully Saved Accounting Status to Invoice ' + invoice_id + '!'
-                    }, {
-                        // settings
-                        type: 'success'
-                    });*/
-                    let inspection_forms = data;
-                    localforage.setItem('inspection_forms', data).then(function (value) {
-                        console.log('saved inspection forms');
-                        populateInspectionFormLists(value);
-                    }).catch(function (err) {
-                        alert('Failed to save inspection forms.');
-                        // we got an error
-                    });
-                })
-                .catch(function (error) {
-                    console.log(error);
-                      console.log(error.response);
-                    /*$.notify({
-                        // options
-                        message: 'Failed to Save Change!'
-                    }, {
-                        // settings
-                        type: 'danger'
-                    });*/
-                });
-
-        }
-
-        function updateActiveInspections() {
-            store.getItem('active_inspections').then(function(value) {
-                // This code runs once the value has been loaded
-                // from the offline store.
-                console.log('Got active inspections.');
-                console.log(value);
-                if (value !== null) {
-                    console.log('saving activeInspections');
-                    activeInspections = value;
-                } else {
-                    activeInspections = [];
-                    console.log('NOT saving activeInspections');
-                }
-
-                document.getElementById("cachedInspections").innerHTML = value.length;
-                $("#activeInspections").html('');
-
-                $("#activeInspections").append('<option value="">Select Inspection...</option>');
-                $.each(activeInspections, function(key, record) {
-                    console.log(record);
-                    $("#activeInspections").append('<option value="' + key +'">' + record.description +'</option>');
-                });
-            }).catch(function(err) {
+                processImages();
+            }).catch(function (err) {
                 // This code runs if there were any errors
                 console.log(err);
             });
-
         }
 
-        function populateInspectionFormLists(data) {
-            console.log('Populating Inspection Forms List');
+        reader.readAsDataURL(options.files[0]);*/
+    }
+
+    function countImages() {
+        store.keys().then(function(keys) {
+            cachedImagesCount = 0;
+            $.each(keys, function(i,d) {
+                if (d.startsWith('file_')) {
+                    console.log('We have a cached file.');
+                    cachedImagesCount++;
+                }
+            });
+            document.getElementById("cachedImages").innerHTML = cachedImagesCount;
+        }).catch(function(err) {
+            // This code runs if there were any errors
+            console.log(err);
+        });
+    }
+
+    function processImages() {
+        store.keys().then(function(keys) {
+            // An array of all the key names.
+            console.log(keys);
+            $.each(keys, function(i,d) {
+                console.log(d);
+                store.getItem(d).then(function(value) {
+                    console.log(value);
+                    if (value !== null && d.startsWith('file_')) {
+                        console.log('We have a file to upload.');
+                        if (navigator.onLine) {
+                            uploadImage(d,value);
+                        }
+                    }
+                }).catch(function(err) {
+                    // This code runs if there were any errors
+                    console.log(err);
+                });
+            });
+        }).catch(function(err) {
+            // This code runs if there were any errors
+            console.log(err);
+        });
+    }
+
+    function uploadImage(key, value) {
+        console.log(key);
+        console.log(value);
+
+        let formData = new FormData();
+        formData.append( 'image', value.files[0] );
+        formData.append( 'name', key + '-' + value.files[0].name, );
+        formData.append('inspection_uuid', value.inspection_uuid);
+
+        axios({
+            method: 'post',
+            url: '/api/v1/inspection_photo',
+            //headers: {'content-type': 'application/json'},
+            data: formData
+        })
+            .then(function (response) {
+                console.log(response);
+                data = response.data;
+                $.notify({
+                    // options
+                    message: 'Successfully Uploaded Image!',
+                }, {
+                    // settings
+                    type: 'success'
+                });
+                store.removeItem(key).then(function() {
+                    // Run this code once the key has been removed.
+                    console.log('Key ' + key + ' is cleared!');
+                }).catch(function(err) {
+                    // This code runs if there were any errors
+                    console.log(err);
+                });
+            })
+            .catch(function (error) {
+                console.log(error);
+                console.log(error.response);
+                $.notify({
+                    // options
+                    message: 'Failed to Upload Image!'
+                }, {
+                    // settings
+                    type: 'danger'
+                });
+            });
+    }
+
+    function updateActiveInspections() {
+        store.getItem('active_inspections').then(function(value) {
+            // This code runs once the value has been loaded
+            // from the offline store.
+            console.log('Got active inspections.');
+            console.log(value);
+            if (value !== null) {
+                console.log('saving activeInspections');
+                activeInspections = value;
+            } else {
+                activeInspections = [];
+                console.log('NOT saving activeInspections');
+            }
+
+            document.getElementById("cachedInspections").innerHTML = value.length;
+            $("#activeInspections").html('');
+
+            $("#activeInspections").append('<option value="">Select Inspection...</option>');
+            $.each(activeInspections, function(key, record) {
+                console.log(record);
+                $("#activeInspections").append('<option value="' + key +'">' + record.description +'</option>');
+            });
+        }).catch(function(err) {
+            // This code runs if there were any errors
+            console.log(err);
+        });
+
+    }
+
+    function populateInspectionFormLists() {
+        console.log('Populating Inspection Forms List');
+        store.getItem('inspection_forms').then(function (data) {
+            console.log('retrieved inspection forms');
             console.log(data);
             inspectionForms = [];
-            $("#listGroupSurveyManage").html('');
-
+            $("#open_form").html('');
             $.each(data, function(key, value) {
                 inspectionForms[value.id] = value;
-
-                //$("#listGroupSurveyManage").append('<button type="button" data-id="' + value.id +'" class="list-group-item list-group-item-action edit-form">' + value.description +'</button>');
                 $("#open_form").append('<option value="' + value.id +'">' + value.description +'</option>');
             });
+        }).catch(function (err) {
+            alert('Failed to retrieve inspection forms.');
+            // we got an error
+        });
+    }
+
+
+    function selectSurvey() {
+        $("#divRowInspection").removeAttr("hidden");
+
+        Survey.StylesManager.applyTheme("bootstrap");
+
+        if (activeInspectionArrayId != null) {
+            survey = new Survey.Model(activeInspections[activeInspectionArrayId].surveyModel);
+            survey.data = activeInspections[activeInspectionArrayId].survey;
+        } else {
+            survey = new Survey.Model(inspectionForms[surveyId].data);
         }
 
+        survey.onComplete.add(function (result) {
+            $('#surveyResult').html("Result JSON:\n" + JSON.stringify(result.data, null, 3));
+            //clearInterval(timerId);
+            //save the data on survey complete. You may call another function to store the final results
+            saveState(survey,true);
+        });
 
-        function selectSurvey() {
-            $("#divRowInspection").removeAttr("hidden");
-            Survey
-                .StylesManager
-                .applyTheme("bootstrap4");
+        /*survey.onUpdatePanelCssClasses.add(function (survey, options) {
+            var classes = options.cssClasses;
+            console.log(options);
+            //classes.button = "btn-primary";
+        });*/
 
-            if (activeInspectionArrayId != null) {
-                survey = new Survey.Model(activeInspections[activeInspectionArrayId].surveyModel);
-                survey.data = activeInspections[activeInspectionArrayId].survey;
-            } else {
-                survey = new Survey.Model(inspectionForms[surveyId].data);
-            }
+        /*survey.onUpdateQuestionCssClasses.add(function (survey, options) {
+            var classes = options.cssClasses;
+            console.log(options.question.getType());
+            console.log(options);
+            /*classes.root = "sq-root";
+            classes.title = "sq-title";
+            classes.item = "sq-item";
+            classes.label = "sq-label";*/
+        /*
+                        classes.button = "btn-primary";
 
-            survey
-                .onComplete
-                .add(function (result) {
-                    document
-                        .querySelector('#surveyResult')
-                        .textContent = "Result JSON:\n" + JSON.stringify(result.data, null, 3);
-                    buildPreviews();
-                });
+                        /*if (options.question.isRequired) {
+                            classes.title = "sq-title sq-title-required";
+                            classes.root = "sq-root sq-root-required";
+                        }
 
-            survey
-                .onCurrentPageChanged
-                .add(function (survey, options) {
-                    saveState(survey);
-                });
-            survey
-                .onComplete
-                .add(function (survey, options) {
-                    //kill the timer
-                    clearInterval(timerId);
-                    //save the data on survey complete. You may call another function to store the final results
-                    saveState(survey);
-                });
+                        if (options.question.getType() === "checkbox") {
+                            classes.root = "sq-root sq-root-cb";
+                        }*/
+        /*           });*/
+
+        survey.onAfterRenderSurvey.add(function(survey,options) {
+            console.log('onAfterRenderSurvey');
+            $(".sv_complete_btn").addClass('btn');
+            $(".sv_complete_btn").addClass('btn-primary');
+
+            $('.sv_q_file_remove_button').addClass('btn');
+            $('.sv_q_file_remove_button').addClass('btn-warning');
+
+            //$("input[type=file]").addClass('custom-file-input');
+        });
+
+        survey.onAfterRenderPage.add(function (survey, options) {
+            console.log('onAfterRenderPage');
+        });
+
+        survey.onCurrentPageChanged.add(function (survey, options) {
+            //$(".sv_complete_btn").addClass('btn btn-primary');
+            //saveState(survey);
+        });
+
+        survey.onValueChanged.add(function (survey, options) {
+            saveState(survey);
+        });
+
+        /*survey.onDownloadFile.add(function(sender, options) {
+            console.log('onDownloadFile');
+            console.log(options);
+            getImage(sender,options);
+            setTimeout(() => {
+                options.callback(
+                    "success",
+                    options.content
+                );
+            }, 20000);
+        });*/
+
+        survey.onUploadFiles.add(function(sender, options) {
+            let image_uuid = uuid();
+            storeImage(sender,options,image_uuid);
+            setTimeout(() => {
+                options.callback("success", [
+                    {
+                        file: options.files[0],
+                        url: "/images/file_" + image_uuid + '-' + options.files[0].name,
+                        content:
+                            "/images/file_" + image_uuid + '-' + options.files[0].name,
+                    }
+                ]);
+                countImages();
+            }, 3000);
+        });
+
+
 
 //Load the initial state
-            loadState(survey);
+        loadState(survey);
 
 //save the data every 10 seconds, it is a good idea to change it to 30-60 seconds or more.
-            timerId = window.setInterval(function () {
-                saveState(survey);
-            }, 30000);
+        /*timerId = window.setInterval(function () {
+            saveState(survey);
+        }, 30000);*/
 
-            $("#surveyElement").Survey({model: survey});
+        $("#surveyElement").Survey({model: survey});
+
+        buildPreviewsWithEvents();
+    }
+
+
+    function loadState(survey) {
+        let res = {};
+
+        if (activeInspectionArrayId >= 0 && activeInspectionArrayId !== null && activeInspections !== null) {
+            res = JSON.parse(activeInspections[activeInspectionArrayId].survey);
         }
 
+        //Set the loaded data into the survey.
+        if (res.currentPageNo)
+            survey.currentPageNo = res.currentPageNo;
+        if (res.data)
+            survey.data = res.data;
+    }
 
-        function loadState(survey) {
-            let res = {};
-
-            if (activeInspectionArrayId >= 0 && activeInspectionArrayId !== null && activeInspections !== null) {
-                res = JSON.parse(activeInspections[activeInspectionArrayId].survey);
-            }
-
-            //Set the loaded data into the survey.
-            if (res.currentPageNo)
-                survey.currentPageNo = res.currentPageNo;
-            if (res.data)
-                survey.data = res.data;
+    function saveState(survey, completed) {
+        if (completed) {
+            console.log('We should save and then try to upload it.');
         }
 
-        function saveState(survey) {
+        let res = {
+            currentPageNo: survey.currentPageNo,
+            data: survey.data
+        };
 
-            let res = {
-                currentPageNo: survey.currentPageNo,
-                data: survey.data
-            };
+        console.log(survey);
+        console.log('Saving State: ' +  JSON.stringify(res));
+        console.log(activeInspections);
 
-            console.log(survey);
+        if (!activeInspections) {
+            activeInspections = [];
+        }
 
-            console.log('Saving State: ' +  JSON.stringify(res));
+        let record = {};
 
-            console.log(activeInspections);
-            //console.log("activeInspectionArrayId 1: " + activeInspectionArrayId);
+        record.description = $("#inputInspectionDescription").val();
+        record.survey = JSON.stringify(res);
 
-            if (!activeInspections) {
-                activeInspections = [];
-            }
-
-            //if (activeInspectionArrayId == null) {
-
+        if (activeInspectionArrayId !== null) {
+            console.log('editing record');
+            // This is supposed to mean that we're editing a record.
+            record.surveyModel = activeInspections[activeInspectionArrayId].surveyModel;
+            record.inspection_form_id = activeInspections[activeInspectionArrayId].inspection_form_id;
+            //if (!record.uuid || typeof record.uuid == "undefined" || record.uuid == "undefined") {
+            record.uuid = activeInspections[activeInspectionArrayId].uuid
             //}
+            activeInspections[activeInspectionArrayId] = record;
+        } else {
+            console.log('creating new record');
+            record.surveyModel = inspectionForms[surveyId].data;
+            record.inspection_form_id = inspectionForms[surveyId].id;
+            record.uuid = activeInspectionUuid;
 
-            //console.log("activeInspectionArrayId 2: " + activeInspectionArrayId);
+            activeInspections.push(record);
+            activeInspectionArrayId = activeInspections.length - 1;
+        }
 
-            let record = {};
-            record.description = $("#inputInspectionDescription").val();
-            record.survey = JSON.stringify(res);
+        store.setItem('active_inspections', activeInspections).then(function (value) {
+            // document.getElementById("cachedInspections").innerHTML = value.length;
+            console.log('Saved Successfully.');
+            updateActiveInspections();
 
-            if (activeInspectionArrayId !== null) {
-                // This is supposed to mean that we're editing a record.
-                record.surveyModel = activeInspections[activeInspectionArrayId].surveyModel
-                activeInspections[activeInspectionArrayId] = record;
-            } else {
-                record.surveyModel = inspectionForms[surveyId].data;
-                activeInspections.push(record);
-                //console.log('Length: ' + activeInspections.length);
-                //console.log("activeInspectionArrayId 2: " + activeInspectionArrayId);
-                activeInspectionArrayId = activeInspections.length - 1;
-                //console.log('activeInspectionArrayId: 3 ' + activeInspectionArrayId);
+            let timestamp = moment().local().format("MMM Do YYYY, h:mm:ss a");
+
+            $("#lastSaveTime").html("Saved: " + timestamp);
+
+            if (completed) {
+                submitInspection(activeInspectionArrayId);
             }
+        }).then(function (value) {
+            // we got our value
+        }).catch(function (err) {
+            // we got an error
+            console.log('Error Saving:');
+            console.log(err);
+        });
+    }
 
-            store.setItem('active_inspections', activeInspections).then(function (value) {
-               // document.getElementById("cachedInspections").innerHTML = value.length;
-                console.log('Saved Successfully.');
-                updateActiveInspections();
-                //console.log(value);
-            }).then(function (value) {
-                // we got our value
-            }).catch(function (err) {
-                // we got an error
-                console.log('Error Saving:');
-                console.log(err);
+    function deleteSurvey(id) {
+        console.log('Attempting to Delete Inspection: ' + id);
+        console.log('activeInspections: ' + activeInspections.length);
+        activeInspections.splice(id, 1);
+        console.log('activeInspections: ' + activeInspections.length);
+        store.setItem('active_inspections', activeInspections).then(function (value) {
+            console.log('Deleted Successfully.');
+            $("#surveyElement").html('');
+            updateActiveInspections();
+        }).then(function (value) {
+            // we got our value
+        }).catch(function (err) {
+            // we got an error
+            console.log('Error Deleting:');
+            console.log(err);
+        });
+    }
+
+    function buildPreviewsWithEvents() {
+        console.log('buildPreviewsWithEvents');
+        var inputs = document.querySelectorAll("input[type=file]");
+
+        inputs.forEach(function (elm, index) {
+            elm.addEventListener("input", function (e) {
+                setTimeout(function () {
+                    console.log(e);
+                    var link = e.target.parentNode.querySelector("a");
+                    var img = e.target.parentNode.querySelector("img");
+                    var wrapper = document.createElement('a');
+                    wrapper.setAttribute("id", "sp" + index);
+                    wrapper.setAttribute("href", link.getAttribute("href"));
+
+                    link.remove();
+                    img.parentNode.insertBefore(wrapper, img);
+                    wrapper.appendChild(img);
+
+                    new SmartPhoto("#sp" + index);
+                }, 100);
             });
-            //Here should be the code to save the data into your database
-            /*window
-                .localStorage
-                .setItem(storageName, JSON.stringify(res));*/
-        }
+        });
+    }
 
-        function deleteSurvey(id) {
-            console.log('activeInspections: ' + activeInspections.length);
-            activeInspections.splice(id, 1);
-            console.log('activeInspections: ' + activeInspections.length);
-            store.setItem('active_inspections', activeInspections).then(function (value) {
-                //document.getElementById("cachedInspections").innerHTML = value.count;
-                console.log('Deleted Successfully.');
-                $("#surveyElement").html('');
-                updateActiveInspections();
-                //console.log(value);
-            }).then(function (value) {
-                // we got our value
-            }).catch(function (err) {
-                // we got an error
-                console.log('Error Deleting:');
-                console.log(err);
-            });
-        }
+    function buildPreviews() {
+        console.log('buildPreviews');
+        var imgs = document.querySelectorAll(".sv_q_file");
+        imgs.forEach(function (elm, index) {
+            var link = elm.querySelector("a");
+            var img = elm.querySelector("img");
+            console.log(link);
+            console.log(img);
+
+            if (img) {
+                var wrapper = document.createElement('a');
+                wrapper.setAttribute("id", "sp" + index);
+                wrapper.setAttribute("href", link.getAttribute("href"));
+                link.remove();
+                img.parentNode.insertBefore(wrapper, img);
+                wrapper.appendChild(img);
+                new SmartPhoto("#sp" + index);
+            }
+        })
+
+    }
 
 
-    </script>
-
-    <!--End Yield javascript-->
-
-    <!--Start Yield footer-->
-    
-    <!--End Yield footer-->
+</script>
 </body>
 </html>
